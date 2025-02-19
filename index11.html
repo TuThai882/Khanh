@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mật thư từ quá khứ</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f8e6c1; /* Nền vàng nhạt truyền thống */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Pattern_ornament_tile.svg'), url('https://upload.wikimedia.org/wikipedia/commons/2/2e/Ph%C6%B0%E1%BB%9Dng_dong.jpg'); /* Hoa văn dân gian + hình minh họa */
+            background-size: 300px 300px, cover; /* Điều chỉnh kích thước của hình ảnh nền */
+            background-repeat: repeat, no-repeat; /* Lặp lại hoa văn, không lặp lại hình minh họa */
+            background-position: center, bottom right; /* Đặt vị trí hình ảnh */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Nền trong suốt để làm nổi bật nội dung */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #d32f2f; /* Màu đỏ tươi, mang tính truyền thống */
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            color: #4a2c2a;
+            margin-top: 20px;
+            font-style: italic;
+            font-family: 'Arial', sans-serif;
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #f9a825; /* Màu vàng tượng trưng cho sự giàu có */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #f57f17;
+        }
+        .character-img {
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+    background-image: url('https://i.pinimg.com/originals/d3/8e/6c/d38e6c7b3ff86596d74a67ba0298b04b.jpg'); /* Đường dẫn ảnh minh họa */
+    background-size: cover;
+    background-position: center; /* Căn giữa ảnh trong div */
+    border-radius: 50%; /* Làm cho ảnh tròn */
+    margin-bottom: 20px;
+    border: 3px solid #d32f2f; /* Viền đỏ cho ảnh */
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Căn giữa ảnh */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>MẬT THƯ</h1>
+        <p>“Hỡi những người con Rồng cháu Tiên, các con có biết tổ tiên chúng ta là ai không? Hãy cùng nhau khám phá qua bài học ngày hôm nay nhé!”</p>
+        
+        <!-- Nhân vật AI với ảnh -->
+        <div class="character-img"></div>
+        
+        <button class="btn" onclick="speak()">Khám Phá Ngay</button>
+    </div>
+
+    <script>
+        function speak() {
+            if ('speechSynthesis' in window) {
+                const msg = new SpeechSynthesisUtterance("Hỡi những người con Rồng cháu Tiên, các con có biết tổ tiên chúng ta là ai không? Hãy cùng nhau khám phá qua bài học ngày hôm nay nhé!");
+                msg.lang = 'vi-VN';
+                window.speechSynthesis.speak(msg);
+            } else {
+                alert("Trình duyệt của bạn không hỗ trợ chức năng phát âm thanh.");
+            }
+        }
+    </script>
+
+</body>
+</html>
